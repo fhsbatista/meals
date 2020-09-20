@@ -43,6 +43,15 @@ class MyApp extends StatelessWidget {
             ),
         MealDetailsPage.routeName: (_) => MealDetailsPage()
       },
+      onUnknownRoute: (settings) => MaterialPageRoute(
+        builder: (_) => CategoriesPage(
+          getCategoriesUseCase: GetCategoriesUseCase(
+            repository: CategoriesRepositoryImpl(
+              datasource: CategoriesLocalDatasourceImpl(),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
