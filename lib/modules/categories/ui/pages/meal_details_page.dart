@@ -58,6 +58,10 @@ class _MealDetailsPageState extends State<MealDetailsPage> {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.favorite),
+        onPressed: () => Navigator.pop(context, meal),
+      ),
     );
   }
 }

@@ -11,7 +11,11 @@ class MealItem extends StatelessWidget {
         context,
         MealDetailsPage.routeName,
         arguments: meal,
-      );
+      ).then((meal) => {
+        if (meal != null) {
+          print((meal as Meal).title)
+        }
+  });
 
   @override
   Widget build(BuildContext context) {
