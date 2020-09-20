@@ -3,6 +3,7 @@ import 'package:meals/modules/categories/data/categories_local_datasource.dart';
 import 'package:meals/modules/categories/domain/get_categories_usecase.dart';
 import 'package:meals/modules/categories/domain/get_meals_by_category.dart';
 import 'package:meals/modules/categories/ui/pages/categories_page.dart';
+import 'package:meals/modules/categories/ui/pages/main_page.dart';
 import 'package:meals/modules/categories/ui/pages/meal_details_page.dart';
 import 'package:meals/modules/categories/ui/pages/meals_page.dart';
 
@@ -26,13 +27,7 @@ class MyApp extends StatelessWidget {
               ),
             ),
       ),
-      home: CategoriesPage(
-        getCategoriesUseCase: GetCategoriesUseCase(
-          repository: CategoriesRepositoryImpl(
-            datasource: CategoriesLocalDatasourceImpl(),
-          ),
-        ),
-      ),
+      home: MainPage(),
       routes: {
         MealsPage.routeName: (_) => MealsPage(
               getMealsByCategoryUseCase: GetMealsByCategoryUseCase(
@@ -44,13 +39,7 @@ class MyApp extends StatelessWidget {
         MealDetailsPage.routeName: (_) => MealDetailsPage()
       },
       onUnknownRoute: (settings) => MaterialPageRoute(
-        builder: (_) => CategoriesPage(
-          getCategoriesUseCase: GetCategoriesUseCase(
-            repository: CategoriesRepositoryImpl(
-              datasource: CategoriesLocalDatasourceImpl(),
-            ),
-          ),
-        ),
+        builder: (_) => MainPage(),
       ),
     );
   }
