@@ -4,6 +4,7 @@ import 'package:meals/modules/categories/data/categories_repository.dart';
 import 'package:meals/modules/categories/domain/get_categories_usecase.dart';
 import 'package:meals/modules/categories/ui/pages/categories_page.dart';
 import 'package:meals/modules/categories/ui/pages/favorite_meals_page.dart';
+import 'package:meals/modules/categories/ui/widgets/main_drawer.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -41,6 +42,7 @@ class _MainPageState extends State<MainPage> {
       appBar: AppBar(
         title: Text(_pages[_selectedPageIndex]['title']),
       ),
+      drawer: MainDrawer(),
       body: _pages[_selectedPageIndex]['page'],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedPageIndex,
