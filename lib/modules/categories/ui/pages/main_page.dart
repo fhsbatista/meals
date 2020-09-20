@@ -7,6 +7,7 @@ import 'package:meals/modules/categories/ui/pages/favorite_meals_page.dart';
 import 'package:meals/modules/categories/ui/widgets/main_drawer.dart';
 
 class MainPage extends StatefulWidget {
+  static const routeName = '/';
   @override
   _MainPageState createState() => _MainPageState();
 }

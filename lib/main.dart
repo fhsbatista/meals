@@ -6,6 +6,7 @@ import 'package:meals/modules/categories/ui/pages/categories_page.dart';
 import 'package:meals/modules/categories/ui/pages/main_page.dart';
 import 'package:meals/modules/categories/ui/pages/meal_details_page.dart';
 import 'package:meals/modules/categories/ui/pages/meals_page.dart';
+import 'package:meals/modules/settings/ui/pages/settings_page.dart';
 
 import 'modules/categories/data/categories_repository.dart';
 
@@ -36,7 +37,8 @@ class MyApp extends StatelessWidget {
                 ),
               ),
             ),
-        MealDetailsPage.routeName: (_) => MealDetailsPage()
+        MealDetailsPage.routeName: (_) => MealDetailsPage(),
+        SettingsPage.routeName: (_) => SettingsPage(),
       },
       onUnknownRoute: (settings) => MaterialPageRoute(
         builder: (_) => MainPage(),
